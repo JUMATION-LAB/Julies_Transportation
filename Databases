@@ -1,0 +1,44 @@
+Browser
+    ↓
+Express
+    ↓
+Supabase JavaScript Client
+    ↓
+Supabase REST API
+    ↓
+PostgreSQL
+
+
+
+Notice Express doesn't know how to talk to PostgreSQL directly.
+It talks to a database client (SDK/driver).
+The client knows how to send requests to the database.
+The database returns data.
+The client converts that data into JavaScript objects.
+
+1. The Golden Rule: RLS is Your Firewall
+    Because anyone can open the browser console and view your anon_key, you must enable Row Level Security (RLS) in your Supabase dashboard. Without RLS, a user could open their browser console and run: 
+
+
+
+2. Real implementation. 
+ npm install @supabase/supabase-js dotenv
+
+ @supabase/supabase-js
+    This is the official library that lets Node.js communicate with Supabase
+
+    dotenv reads those secrets and makes them available to Node.js.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

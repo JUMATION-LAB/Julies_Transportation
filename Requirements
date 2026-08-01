@@ -1,0 +1,38 @@
+1. For Julie Transporters, the owner needs to remember things like:
+    Bookings
+    Vehicles
+    Services
+    Gallery images
+    Testimonials
+    Admin accounts
+    Website settings
+Those become our tables.
+
+
+2. Tables
+    admins          | id | name | email | password |
+    bookings        | Booking Ref | Customer | Pickup | Destination |
+    vehicles        the website will read them from the database.
+                    Then the owner can add vehicles without touching code.
+    services        
+    gallery
+    testimonials
+    settings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

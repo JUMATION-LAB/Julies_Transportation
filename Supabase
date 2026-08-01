@@ -1,0 +1,119 @@
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient('YOUR_SUPABASE_URL', 'YOUR_ANON_KEY')
+
+
+
+// Core Query Blueprint
+// Every single query follows a clean, chainable grammar: supabase.from().select().filter().
+// javascript
+// The Golden Template
+const { data, error } = await supabase
+  .from('users')               // 1. Target the table
+  .select('id, name, email')   // 2. Select your columns
+  .eq('status', 'active')      // 3. Filter the rows
+
+
+
+// 1. The Bulletproof Fetch (With Error Handling)
+// Never assume a network call succeeds. 
+// Always destructure both data and error immediately.
+// javascript
+const { data: profiles, error } = await supabase
+  .from('profiles')
+  .select('username, avatar_url')
+  .limit(10)
+
+if (error) {
+  console.error('Fetch failed:', error.message)
+  return
+
+}
+
+console.log('User profiles:', profiles)
+
+
+
+
+// 2. Relational Joins (Zero Effort)
+// Forget complex SQL JOIN syntax. 
+// Because Supabase detects foreign keys, 
+// you pull related data by nesting properties inside your .select() string. 
+javascript
+// Fetch posts AND the username of the person who wrote them
+const { data: posts } = await supabase
+  .from('posts')
+  .select(`
+    title,
+    content,
+    author_id (
+      username
+    )
+  `)
+
+
+
+
+
+
+// 3. High-Speed Modifications (Insert & Update)
+// Modifying data uses the exact same chainable logic. 
+// You pass objects or arrays of objects directly to your database.
+// javascript
+// Insert a new row
+const { error: insertError } = await supabase
+  .from('tasks')
+  .insert([{ title: 'Buy groceries', completed: false }])
+
+// Update existing rows based on a filter
+const { error: updateError } = await supabase
+  .from('tasks')
+  .update({ completed: true })
+  .eq('id', 42)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+// The Golden Rule: RLS is Your Firewall
+// Because anyone can open the browser console and view your anon_key,
+//  you must enable Row Level Security (RLS) in your Supabase dashboard. 
+// Without RLS, a user could open their browser console and run: 
+
+
+
+

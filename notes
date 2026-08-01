@@ -1,0 +1,80 @@
+1. public/
+This folder contains everything ordinary website visitors can access.
+public stores the customer-facing website.
+
+
+2. src/
+This is the main Node.js backend folder.
+src stores the server-side application code.
+
+
+src/config/
+config stores setup and connection settings.
+supabase.js will connect Node.js to Supabase.
+
+
+src/routes/
+Routes define the URLs that the server accepts.
+
+
+src/controllers/
+Controllers contain the actual logic executed by routes.
+The route receives the request, then calls the controller to decide what the server should do with a request.
+
+
+
+
+src/middleware/
+Middleware runs between the request and the final controller.
+Middleware sits between Express and the response.
+    Check authentication
+    Validate data
+    errorHandler
+we want to reject any booking where:
+    Name is empty
+    Passengers < 1
+    Date is in the past
+Why middleware often uses exports directly e.g exports.logger = ()=>{...}
+    A middleware file often contains only one middleware.
+Then why do we import with { }? 
+    What gets exported is actually an object. { logger: logger }
+    then const { logger } = require(objectUrl);
+
+
+
+
+src/services/
+Services contain reusable business logic.
+Services perform reusable work that controllers need preventung controllers from becoming too large.
+    Suppose later we want the home page to show:
+        Featured vehicles
+        Three latest testimonials
+        Company statistics
+    Question: Which layer should retrieve that information?
+
+
+
+
+src/utils/
+This contains small helper functions.
+    Format telephone numbers
+    Format dates
+
+
+
+app.use()
+I'm delegating this responsibility to another module.
+
+
+
+2. exports.errorHandler = (err, req, res, next) => {
+    };
+            or
+    const errorHandler = (err, req, res, next) => {
+    };
+    exports.errorHandler = errorHandler;
+            or
+    module.exports = {
+    getServices
+    };
+

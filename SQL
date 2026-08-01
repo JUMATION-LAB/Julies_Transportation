@@ -1,0 +1,1 @@
+ALTER TABLE service rename to services;

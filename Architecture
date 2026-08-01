@@ -1,0 +1,31 @@
+Browser                            Browser
+
+↓                                     ↓ 
+
+Express Route                      Middleware
+
+↓                                    ↓
+
+Controller                        Route
+
+↓                                    ↓
+
+Service                          Controller
+
+↓                                    ↓
+
+Database                         Service
+
+↓                                    ↓
+
+Controller                           Database
+
+↓                                    ↓
+
+Response                           Controller
+                                      ↓
+
+                                     Browser   
+
+
+

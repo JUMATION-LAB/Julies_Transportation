@@ -1,13 +1,19 @@
+const { errorResponse } = require('../utils/apiResponse');
+// (res , statusCode , message , errors = [])
+const errorHandler =  (err , req , res , next )=>{
+   
+    // console.error("This is err.stack" + err.stack);
+    console.log("This is err" + err);
 
-exports.errorHandler =  (err , req , res , next )=>{
-    console.error(err.stack);
-    console.log(err);
-
-    res.status(500).json({ success: false,
-        message: err.message || "Internal Server error" 
-    })
-
+    const error = err.errors || [];
+    const statusCode = res.statusCode || 500;
+    const message = err.message || 'Internal server error.'
     
-
-
+    return errorResponse(res , statusCode , message , error);
 }
+
+
+module.exports = {
+    errorHandler
+}
+

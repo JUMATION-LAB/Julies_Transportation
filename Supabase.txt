@@ -73,6 +73,11 @@ const { error: updateError } = await supabase
 
 
 
+| Method           | Expected rows | Returned shape   | Zero rows |
+| ---------------- | ------------: | ---------------- | --------- |
+| `.select()`      |    Any number | Array            | `[]`      |
+| `.single()`      |   Exactly one | Object           | Error     |
+| `.maybeSingle()` |   Zero or one | Object or `null` | `null`    |
 
 
 

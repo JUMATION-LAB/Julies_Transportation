@@ -1,0 +1,10 @@
+const removeUnknownFields = (body) => {
+    return Object.fromEntries(
+        Object.entries(body).filter(([field]) => allowedFields.includes(field))
+    );
+};
+
+
+                ERRORS
+// The reason you are seeing [object Object] instead of your actual data in the terminal is because you are using string concatenation (+) to print a JavaScript object inside your console.log.
+// In JavaScript, when you try to merge an object with a string using +, the engine converts the object into a generic string label ([object Object]), which hides all of your actual data values.

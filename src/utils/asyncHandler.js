@@ -4,4 +4,6 @@ const asyncHandler = (controllerFunction) => {
     };
 };
 
-module.exports = asyncHandler;
+module.exports = {
+    asyncHandler
+};

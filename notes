@@ -2,6 +2,8 @@
 This folder contains everything ordinary website visitors can access.
 public stores the customer-facing website.
 
+// npm install --save-dev @types/node @types/express
+
 
 2. src/
 This is the main Node.js backend folder.
@@ -44,6 +46,7 @@ Then why do we import with { }?
 
 
 src/services/
+The service is responsible for fetching the correct business data.
 Services contain reusable business logic.
 Services perform reusable work that controllers need preventung controllers from becoming too large.
     Suppose later we want the home page to show:
@@ -92,7 +95,61 @@ At the very top of app.js, after loading dotenv: e.g require('./config/env');
 
 
 
-Lesson 10 - Centralized Application Configuration
+// Now an error can specify whether it is a 400, 404, 409, or 500 response.
+
+
+
+
+Promise.all()
+    receives an array of promises and waits until all succeed.
+        await Promise.all([
+            checkServiceExists(bookingData.service_id),
+            checkVehicleExists(bookingData.vehicle_id)
+        ]);
+
+Why check existence manually if foreign keys already exist?
+Without our check, the customer might receive technical message handlers.
+    insert or update on table "bookings" violates foreign key constraint vs  "message": "Selected vehicle was not found.",
+'
+
+
+A good validation file usually follows this process:
+Receive input
+   ↓
+Allow only expected             fields Object.fromEntries()
+   ↓
+Check required fields           !vehicle.name || typeof vehicle.name !
+   ↓
+Check data types
+   ↓
+Check formats
+   ↓
+Check ranges and business rules
+   ↓
+Clean the values
+   ↓
+Pass cleaned data forward
+
+/*
+if (
+    vehicle.description !== undefined &&
+    vehicle.description !== null &&
+    typeof vehicle.description !== 'string'
+) {
+    errors.push({
+        field: 'description',
+        message: 'Description must be a string or null.'
+    });
+} undefined → accepted
+null      → accepted
+string    → accepted
+number    → rejected
+object    → rejected
+*/
+
+
+
+
 
 
 

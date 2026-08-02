@@ -57,3 +57,4 @@ GET /api/settings
 PUT /api/settings
 
 
+Routes are built first then service then the controller.

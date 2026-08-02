@@ -1,16 +1,19 @@
 require('dotenv').config();
+require('./config/env');
 
 const express = require('express');
 const path = require('path');
+const config = require('./config/appConfig');
 
 const pageRoutes = require('./routes/pageRoutes');
 const testRoutes = require('./routes/testRoutes');
 const serviceRoutes = require('./routes/serviceRoutes');
 const {errorHandler} = require('./middleware/errorHandler');
+const {notFoundHandler} = require('./middleware/notFoundHandler')
 const { logger } = require('./middleware/logger');
 
 const app = express();
-const port = 3000;
+const port = config.port;
 
 
 app.use(express.static(path.join(__dirname , '../public')));
@@ -24,6 +27,7 @@ app.use('/', serviceRoutes);
 
 //Error Handlers
 app.use(errorHandler);
+app.use(notFoundHandler);
 
 
 app.listen(port , ()=>{

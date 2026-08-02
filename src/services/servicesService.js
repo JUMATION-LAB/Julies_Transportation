@@ -1,21 +1,19 @@
 const supabase = require('../config/supabase');
 
-exports.getServices = async ( req, res, next) => {
-    try {
 
-    const { data, error } = await supabase.from('services').select('*').neq('is_active', false);
+exports.getServices = async () => {
     
-    return res.status(200).json({ 
-        success:true , 
-        data: data
-     });
+        const { data, error } = await supabase.from('services').select('*').neq('is_active', false);
 
-    } catch(err){
+        console.log("   Data: ", data);
 
+          if (error) {
+            return error;
+        }
 
-    if (error) {
-        next(error);
-    }
-    }
-
+        return {
+            success: true,
+            data: data
+        };
+ 
 };

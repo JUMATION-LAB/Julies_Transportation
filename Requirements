@@ -21,18 +21,39 @@ Those become our tables.
 
 
 
+3. Phase 2 — Backend APIs
+Services API
+GET /api/services
+POST /api/services
+PUT /api/services/:id
+DELETE /api/services/:id
 
 
 
+Vehicles API
+GET /api/vehicles
+POST /api/vehicles
+PUT /api/vehicles/:id
+DELETE /api/vehicles/:id
 
 
 
+Gallery API
+GET /api/gallery
+POST /api/gallery
+DELETE /api/gallery/:id
 
 
 
+Testimonials API
+GET /api/testimonials
+POST /api/testimonials
+DELETE /api/testimonials/:id
 
 
 
-
+Settings API
+GET /api/settings
+PUT /api/settings
 
 

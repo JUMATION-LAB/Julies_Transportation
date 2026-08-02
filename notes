@@ -57,9 +57,9 @@ Services perform reusable work that controllers need preventung controllers from
 
 src/utils/
 This contains small helper functions.
-    Format telephone numbers
-    Format dates
-
+Format telephone numbers
+Format dates
+asyncHandler: receives a controller function and returns a new Express middleware function.
 
 
 app.use()
@@ -67,14 +67,38 @@ I'm delegating this responsibility to another module.
 
 
 
-2. exports.errorHandler = (err, req, res, next) => {
-    };
+2. exports.errorHandler = (err, req, res, next) => {};
             or
-    const errorHandler = (err, req, res, next) => {
-    };
+    const errorHandler = (err, req, res, next) => {};
     exports.errorHandler = errorHandler;
             or
-    module.exports = {
-    getServices
-    };
+    module.exports = { getServices };
+    
+    
+The catch(err) block only triggers if something completely unrelated crashes, like a network failure,
+ a server blackout, or a syntax typo in your JavaScript code.
+
+
+
+
+
+
+3. src/config/env.js
+At the very top of app.js, after loading dotenv: e.g require('./config/env');
+    Because we don't need anything from it.
+    We simply want the file to execute once during startup.
+    When Node.js imports a file, it executes it.
+    If everything is configured correctly...
+
+
+
+Lesson 10 - Centralized Application Configuration
+
+
+
+
+
+
+
+
 

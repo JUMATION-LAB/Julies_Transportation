@@ -1,11 +1,12 @@
 const { createClient } = require('@supabase/supabase-js');
-
+const config = require('./appConfig');
 
 const supabase = createClient( 
-    process.env.SUPABASE_URL ,
 
-    process.env.SUPABASE_ANON_KEY
-    
+    config.supabase.url , //That's called abstraction.
+
+    config.supabase.annonKey 
+
     );
 
 

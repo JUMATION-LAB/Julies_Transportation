@@ -1,24 +1,21 @@
 const service = require('../services/servicesService');
+const { succesResponse } = require('../utils/apiResponse');
+const asyncHandler = require('../utils/asyncHandler');
 
-exports.getServices = async (req, res) => {
 
-    try {
-        const services = await service.getServices();
+exports.getServices = asyncHandler(async (req, res) => {
 
-        return res.status(200).json({
-            success: true,
-            data: services
-        });
-        
-    } catch (error) {
-        console.error('Failed to retrieve services:', error.message);
+    const services = await service.getServices();
+    console.log("Services: ", services);
 
-        return res.status(500).json({
-            success: false,
-            message: 'Failed to retrieve services.'
-        });
-    }
-};
+    return succesResponse(
+        res,
+        200,
+        'Serviced retrieved successfully',
+        services
+    );
+
+});
 
 
 
@@ -41,4 +38,3 @@ exports.getService = async (req, res)=>{
 }
  */
 
- 

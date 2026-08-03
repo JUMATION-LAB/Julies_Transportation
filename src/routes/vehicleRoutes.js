@@ -4,8 +4,9 @@ const router = express.Router();
 const vehicleController = require('../controllers/vehicleController');
 const { validateUUID } = require('../middleware/validateUUID');
 const {validateVehicle, validateVehicleUpdate } = require('../middleware/validateVehicle');
+const { authenticate } = require('../middleware/authenticate');
 
-router.get('/vehicles', vehicleController.getVehicles);
+router.get('/vehicles', authenticate, vehicleController.getVehicles);
 
 router.get( '/vehicles/:id', validateUUID, vehicleController.getVehicle );
 

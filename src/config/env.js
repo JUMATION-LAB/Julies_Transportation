@@ -1,6 +1,7 @@
 const requiredVariables = [
     'SUPABASE_URL',
-    'SUPABASE_ANON_KEY'
+    'SUPABASE_ANON_KEY',
+    'SUPABASE_SECRET_KEY'
 ]
 
 requiredVariables.forEach( (variable ) =>{

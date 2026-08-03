@@ -1,0 +1,61 @@
+npm install bcrypt jsonwebtoken 
+Authentication answers:  Who are you?
+
+Authorization answers:  Are you allowed to perform this action?
+
+
+
+1. 
+Admin submits email and password
+        ↓
+Express searches public.admins
+        ↓
+bcrypt compares password with password_hash
+        ↓
+Express creates its own JWT
+        ↓
+Frontend stores and sends that token
+        ↓
+Express middleware verifies the token
+
+
+
+2. Custom authentication.
+Creating accounts
+Hashing passwords
+Comparing passwords
+Issuing tokens
+Verifying tokens
+Password resets
+Account activation
+Token expiry
+Protecting routes
+
+
+const passwordHash = await bcrypt.hash(password, 12);
+The number 12 is the cost factor. A higher cost makes hashing more computationally expensive, which helps slow password-guessing attacks, but also uses more server processing time.
+
+
+
+const authHeader = req.headers.authorization;
+req = {
+
+    headers: {},
+
+    body: {},
+
+    params: {}
+
+}
+then req.user = decoded;
+
+req = {
+
+    headers: {},
+
+    body: {},
+
+    params: {}
+
+}
+

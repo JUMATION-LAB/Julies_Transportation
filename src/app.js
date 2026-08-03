@@ -13,6 +13,10 @@ const vehichleRoutes  = require('./routes/vehicleRoutes')
 const serviceRoutes = require('./routes/serviceRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
+const testimonialRoutes = require('./routes/testimonialRoutes');
+const authRoutes = require('./routes/authRoutes');
+const galleryRoutes = require('./routes/galleryRoutes');
+
 const {errorHandler} = require('./middleware/errorHandler');
 const {notFoundHandler} = require('./middleware/notFoundHandler')
 const { logger } = require('./middleware/logger');
@@ -33,7 +37,11 @@ app.use('/api' , vehichleRoutes);
 app.use('/api', serviceRoutes);
 app.use('/api', bookingRoutes);
 app.use('/api', settingsRoutes);
+app.use('/api', testimonialRoutes);
+app.use('/api', galleryRoutes);
+app.use('/api', authRoutes);
 app.use('/test' , testRoutes);
+
 
 
 //Error Handlers

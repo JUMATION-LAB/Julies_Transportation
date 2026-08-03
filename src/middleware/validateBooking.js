@@ -1,5 +1,15 @@
 const { AppError } = require('../utils/AppError');
+/* 
+Required string:
+type check OR empty-after-trim check
+Optional string:
+if supplied and not null, confirm it is a string
+Integer:
+Number.isInteger plus range
+Boolean:
+typeof value === 'boolean'
 
+ */
 const allowedFields = [
     'customer_name',
     'phone',

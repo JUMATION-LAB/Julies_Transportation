@@ -8,3 +8,19 @@ const removeUnknownFields = (body) => {
                 ERRORS
 // The reason you are seeing [object Object] instead of your actual data in the terminal is because you are using string concatenation (+) to print a JavaScript object inside your console.log.
 // In JavaScript, when you try to merge an object with a string using +, the engine converts the object into a generic string label ([object Object]), which hides all of your actual data values.
+jwt.verify(
+    token,
+    config.jwt.secret
+); 
+// how does it work 
+
+
+// 🎓 Homework thought
+
+// Notice that we stored the user's role inside the JWT.
+
+// Ask yourself:
+
+// What happens if an administrator is changed to a customer in the database after they have already logged in?
+
+// Will the existing JWT immediately reflect that role change, or will it continue to carry the old role until something else happens?

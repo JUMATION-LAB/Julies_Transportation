@@ -62,3 +62,18 @@ update
 remove
 ↓
 module.exports
+
+
+
+
+
+
+
+npm install bcrypt jsonwebtoken
+bcrypt hashes and compares passwords.
+
+jsonwebtoken creates and verifies login tokens. Its verify() method checks the token signature and expiration; decode() alone is not secure for authentication.
+
+
+
+

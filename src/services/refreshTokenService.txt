@@ -1,0 +1,82 @@
+const bcrypt = require('bcrypt');
+const supabase = require('../config/supabase');
+const { AppError } = require('../utils/AppError');
+
+const saveToken = async (adminId, refreshToken, expiresAt) => {
+    const saltRounds = 10;
+    const tokenHash = await bcrypt.hash(refreshToken, saltRounds);
+
+    const { data, error } = await supabase
+        .from('refresh_tokens')
+        .insert({
+            admin_id: adminId,
+            token_hash: tokenHash,
+            expires_at: expiresAt
+        })
+        .select()
+        .single();
+
+    if (error) {
+        throw error;
+    }
+
+    return data;
+};
+
+const findTokenByAdminId = async (adminId, refreshToken) => {
+    const { data: storedTokens, error } = await supabase
+        .from('refresh_tokens')
+        .select('*')
+        .eq('admin_id', adminId);
+
+    if (error) {
+        throw error;
+    }
+
+    if (!storedTokens) {
+        return null;
+    }
+
+    for (const record of storedTokens) {
+        const isMatch = await bcrypt.compare(refreshToken, record.token_hash);
+        if (isMatch) {
+            if (new Date(record.expires_at) < new Date()) {
+                await deleteTokenById(record.id);
+                return null;
+            }
+            return record;
+        }
+    }
+
+    return null;
+};
+
+const deleteTokenById = async (tokenId) => {
+    const { error } = await supabase
+        .from('refresh_tokens')
+        .delete()
+        .eq('id', tokenId);
+
+    if (error) {
+        throw error;
+    }
+};
+
+const deleteAllTokensForAdmin = async (adminId) => {
+    const { error } = await supabase
+        .from('refresh_tokens')
+        .delete()
+        .eq('admin_id', adminId);
+
+    if (error) {
+        throw error;
+    }
+};
+
+module.exports = {
+    saveToken,
+    findTokenByAdminId,
+    deleteTokenById,
+    deleteAllTokensForAdmin
+};
+

@@ -6,15 +6,15 @@ const { validateUUID } = require('../middleware/validateUUID');
 const {validateVehicle, validateVehicleUpdate } = require('../middleware/validateVehicle');
 const { authenticate } = require('../middleware/authenticate');
 
-router.get('/vehicles', authenticate, vehicleController.getVehicles);
+router.get('/vehicles', vehicleController.getVehicles);
 
 router.get( '/vehicles/:id', validateUUID, vehicleController.getVehicle );
 
-router.post( '/vehicles', validateVehicle, vehicleController.createVehicle );
+router.post( '/vehicles',authenticate, validateVehicle, vehicleController.createVehicle );
     
-router.patch( '/vehicles/:id', validateUUID, validateVehicleUpdate, vehicleController.updateVehicle );
+router.patch( '/vehicles/:id', authenticate, validateUUID, validateVehicleUpdate, vehicleController.updateVehicle );
 
-router.delete( '/vehicles/:id', validateUUID, vehicleController.deleteVehicle );
+router.delete( '/vehicles/:id', authenticate, validateUUID, vehicleController.deleteVehicle );
 
 module.exports = router;
 

@@ -59,3 +59,32 @@ req = {
 
 }
 
+
+
+Login
+↓
+Verify password
+↓
+Generate Access Token
+↓
+Generate Refresh Token
+↓
+Hash Refresh Token
+↓
+Store Hash in Database
+↓
+Return Tokens
+↓
+Frontend Stores Them
+↓
+Every Request Uses Access Token
+↓
+Expired?
+↓
+Use Refresh Token
+↓
+Verify
+↓
+Issue New Access Token
+↓
+Continue

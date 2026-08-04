@@ -27,7 +27,8 @@ const authenticate = (req, res, next) => {
         const decoded = jwt.verify(
             token,
             config.jwt.secret
-        ); //This returns the payload of the token, which is the adminId and email.
+        ); 
+        //This returns the payload of the token, which is the adminId and email.
 //e.g { adminId: 1, email: 'admin@example.com' }
 
 

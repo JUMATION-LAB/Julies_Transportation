@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const supabase = require('../config/supabase');
 const config = require('../config/appConfig');
 const { AppError } = require('../utils/AppError');
+const { generateAccessToken, generateRefreshToken } = require('../utils/jwt');
 
 const login = async (email, password) => {
     const { data: admin, error } = await supabase
@@ -28,19 +29,18 @@ console.log("Admin data:", admin);
         throw new AppError('Invalid email or password.', 401);
     }
 
-    const token = jwt.sign(
-        {
-            adminId: admin.id,
-            email: admin.email
-        },
-        config.jwt.secret,
-        {
-            expiresIn: config.jwt.expiresIn
-        }
-    );
+    // 4. Calculate absolute expiration date (30 days from now) for PostgreSQL timestamptz
+    const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
+
+
+
+    const accessToken = generateAccessToken(admin);
+    const refreshToken = generateRefreshToken(admin);
+    // Optionally, you can store the refresh token in the database 
+    // or a secure storage for later use.
 
     return {
-        token,
+        accessToken,
         admin: {
             id: admin.id,
             name: admin.name,

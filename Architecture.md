@@ -77,3 +77,46 @@ jsonwebtoken creates and verifies login tokens. Its verify() method checks the t
 
 
 
+
+
+Login
+   │
+   ▼
+Check email/password
+   │
+   ▼
+bcrypt.compare()
+   │
+   ▼
+Generate JWT
+   │
+   ▼
+Browser stores JWT
+   │
+   ▼
+Every request sends JWT
+   │
+   ▼
+authenticate()
+   │
+   ▼
+jwt.verify()
+   │
+   ▼
+req.user
+   │
+   ▼
+authorize()
+   │
+   ▼
+Validation
+   │
+   ▼
+Controller
+   │
+   ▼
+Service (business rules)
+   │
+   ▼
+Supabase
+

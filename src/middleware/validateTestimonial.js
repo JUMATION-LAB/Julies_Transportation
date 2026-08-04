@@ -1,5 +1,6 @@
 const { AppError } = require('../utils/AppError');
 
+
 const allowedFields = [
     'customer_name',
     'customer_role',
@@ -102,6 +103,14 @@ const validateTestimonial = (req, res, next) => {
     req.body = testimonial;
     next();
 };
+
+const validateTestimonialUpdate  = ( req, res , next )=>{
+        const testimonial = cleanBody(req.body);
+        const errors = [];
+
+        // if()
+
+}
 
 module.exports = {
     validateTestimonial

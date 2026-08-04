@@ -6,5 +6,5 @@ const pageController = require('../controllers/pageController');
 
 
 router.get('/' , pageController.home);
-
+console.log('calledd')
 module.exports = router;

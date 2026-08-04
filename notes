@@ -158,8 +158,8 @@ typeof value === 'boolean'
 
 
 
-
-
+Incase the right hand is true then the right is returned.
+...( Storage.getToken() && {Authorization: `Bearer ${Storage.getToken()}` })
 
 
 

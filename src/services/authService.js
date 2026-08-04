@@ -30,7 +30,7 @@ console.log("Admin data:", admin);
     }
 
     // 4. Calculate absolute expiration date (30 days from now) for PostgreSQL timestamptz
-    const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
+    // const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
 
 
 

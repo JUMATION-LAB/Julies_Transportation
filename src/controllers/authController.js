@@ -16,6 +16,19 @@ const login = asyncHandler(async (req, res) => {
     );
 });
 
+
+const logout = asyncHandler( async (req, res )=>{
+    const logout = await authService.logout();
+
+    return successResponse(
+        res,
+        200,
+        'Logged out successfully.',
+    )
+
+
+});
+
 module.exports = {
     login
 };

@@ -1,0 +1,25 @@
+1. 📁 public/js/api/api.js
+
+API = (() => {
+    const BASE_URL = '/api';
+    const request = async (endpoint, options = {}) => {
+        const response = await fetch(`${BASE_URL}${endpoint}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                ...(options.headers || {})
+            },
+            ...options
+        });
+        return get(), post } })()
+(()=>{})()  runs immediately without calling it.
+
+
+2. 📁 public/js/utils/storage.js
+const storage
+
+
+
+
+Immediately Invoked Function Expressions
+    This be like writing an object. The function is immediately executed and an Object is returned.
+

@@ -22,6 +22,11 @@ const config = {
         refreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '30d'
 
     }
+    ,
+    pg: {
+        url: process.env.DATABASE_URL
+
+    } 
 
 }
 

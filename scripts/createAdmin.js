@@ -29,7 +29,7 @@ const createAdmin = async ()=>{
                 console.log("Admin Errror ", error);
                 }
 
-                console.log("Admin ", data);
+                console.log("Admin in create admin", data);
 
 };
 

@@ -25,14 +25,16 @@ const port = config.port;
 
 
 app.use(express.static(path.join(__dirname , '../public')));
+app.use('/admin' , express.static(path.join(__dirname , '../admin')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
 
+
 app.use(logger);
 
-app.use('/', pageRoutes);
+app.use('/admin', pageRoutes);
 app.use('/api' , vehichleRoutes);
 app.use('/api', serviceRoutes);
 app.use('/api', bookingRoutes);

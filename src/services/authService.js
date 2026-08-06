@@ -11,7 +11,7 @@ const login = async (email, password) => {
         .select('id, name, email, password_hash, is_active')
         .eq('email', email)
         .maybeSingle();
-console.log("Admin data:", admin);
+// console.log("Admin data:", admin);
     if (error) {
         throw error;
     }
@@ -28,11 +28,7 @@ console.log("Admin data:", admin);
     if (!passwordMatches) {
         throw new AppError('Invalid email or password.', 401);
     }
-
-    // 4. Calculate absolute expiration date (30 days from now) for PostgreSQL timestamptz
-    // const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
-
-
+ 
 
     const accessToken = generateAccessToken(admin);
     const refreshToken = generateRefreshToken(admin);

@@ -7,3 +7,5 @@ const { validateLogin } = require('../middleware/validateLogin');
 router.post('/auth/login', validateLogin, authController.login);
 
 module.exports = router;
+
+

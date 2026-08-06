@@ -3,9 +3,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Julie Transporters Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
-    DASHBOARD
+
+<div class="dashboard">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    JT
+                </div>
+
+                <div>
+                    <h2>Julie</h2>
+                    <span>Transporters</span>
+                </div>
+
+            </div>
+
+            <p class="sidebar-label">
+                OPERATIONS
+            </p>
+
+            <nav>
+
+                <a href="#" class="active">
+                    <i data-lucide="layout-dashboard"></i>
+                    Dashboard
+                </a>
+
+                <a href="#">
+                    <i data-lucide="calendar-days"></i>
+                    Bookings
+                </a>
+
+                <a href="#">
+                    <i data-lucide="bus"></i>
+                    Vehicles
+                </a>
+
+                <a href="#">
+                    <i data-lucide="briefcase-business"></i>
+                    Services
+                </a>
+
+                <a href="#">
+                    <i data-lucide="image"></i>
+                    Gallery
+                </a>
+
+                <a href="#">
+                    <i data-lucide="message-circle-heart"></i>
+                    Testimonials
+                </a>
+
+                <a href="#">
+                    <i data-lucide="settings"></i>
+                    Settings
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-card">
+
+                <img src="https://i.pravatar.cc/120?img=12" alt="Admin">
+
+                <div>
+
+                    <h4>Administrator</h4>
+
+                    <span>admin@julie.com</span>
+
+                </div>
+
+            </div>
+
+            <button class="logout-btn">
+
+                <i data-lucide="log-out"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="eyebrow">
+                    JULIE TRANSPORTERS
+                </p>
+
+                <h1>
+
+                    Good Morning,
+
+                    <span>Juma 👋</span>
+
+                </h1>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <div class="search">
+
+                    <i data-lucide="search"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search bookings..."
+                    >
+
+                </div>
+
+                <button class="icon-btn">
+
+                    <i data-lucide="bell"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Statistics -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon bookings">
+                    <i data-lucide="calendar-check"></i>
+                </div>
+
+                <h3>148</h3>
+
+                <p>Total Bookings</p>
+
+                <span class="positive">
+                    +12% this month
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon vehicles">
+                    <i data-lucide="bus-front"></i>
+                </div>
+
+                <h3>18</h3>
+
+                <p>Fleet Vehicles</p>
+
+                <span>
+                    15 Available
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon revenue">
+                    <i data-lucide="banknote"></i>
+                </div>
+
+                <h3>UGX 28M</h3>
+
+                <p>Revenue</p>
+
+                <span class="positive">
+                    +18%
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon customers">
+                    <i data-lucide="users"></i>
+                </div>
+
+                <h3>312</h3>
+
+                <p>Customers</p>
+
+                <span>
+                    Lifetime
+                </span>
+
+            </div>
+
+        </section>
+
+        <!-- Dashboard Content -->
+
+        <section class="dashboard-grid">
+
+            <!-- Left Column -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <h2>
+
+                        Recent Bookings
+
+                    </h2>
+
+                    <button>
+
+                        View All
+
+                    </button>
+
+                </div>
+
+                <table>
+
+                    <thead>
+
+                    <tr>
+
+                        <th>Reference</th>
+
+                        <th>Customer</th>
+
+                        <th>Vehicle</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+
+                        <td>JT-2026-104</td>
+
+                        <td>John Doe</td>
+
+                        <td>Coaster</td>
+
+                        <td>
+
+                            <span class="badge confirmed">
+
+                                Confirmed
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>JT-2026-105</td>
+
+                        <td>Sarah</td>
+
+                        <td>Hiace</td>
+
+                        <td>
+
+                            <span class="badge pending">
+
+                                Pending
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>JT-2026-106</td>
+
+                        <td>Michael</td>
+
+                        <td>Drone</td>
+
+                        <td>
+
+                            <span class="badge cancelled">
+
+                                Cancelled
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <!-- Right Column -->
+
+            <aside class="panel">
+
+                <div class="panel-header">
+
+                    <h2>
+
+                        Fleet Status
+
+                    </h2>
+
+                </div>
+
+                <div class="fleet-card">
+
+                    <img src="https://picsum.photos/400/200" alt="Vehicle">
+
+                    <h3>Toyota Coaster</h3>
+
+                    <p>34 Seater Luxury Coach</p>
+
+                    <span class="badge available">
+
+                        Available
+
+                    </span>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+<script src="./js/dashboard.js"></script>
+
 </body>
 </html>

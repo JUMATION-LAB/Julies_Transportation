@@ -23,3 +23,298 @@ const storage
 Immediately Invoked Function Expressions
     This be like writing an object. The function is immediately executed and an Object is returned.
 
+
+
+Login
+Admin opens Login Page
+          │
+          ▼
+Enters email & password
+          │
+          ▼
+JavaScript (login.js)
+          │
+          ▼
+api.js
+          │
+          ▼
+POST /api/auth/login
+          │
+          ▼
+Express Backend
+          │
+          ▼
+Controller
+          │
+          ▼
+AuthService
+          │
+          ▼
+JWT Generated
+          │
+          ▼
+Response sent
+          │
+          ▼
+api.js receives response
+          │
+          ▼
+storage.js saves token
+          │
+          ▼
+Redirect to dashboard
+
+
+
+
+
+
+How does the Login UI connect?
+
+Imagine this HTML.
+
+<form id="loginForm">
+
+<input id="email">
+
+<input id="password">
+
+<button>Login</button>
+
+</form>
+
+Then
+
+login.js
+
+listens.
+
+loginForm.addEventListener("submit", loginUser);
+
+When the button is clicked
+
+↓
+
+JavaScript collects
+
+email
+
+password
+
+↓
+
+Calls
+
+api.login(email,password)
+
+↓
+
+api.js sends
+
+POST /api/auth/login
+
+↓
+
+Backend returns
+
+{
+    "token":"..."
+}
+
+↓
+
+login.js receives it
+
+↓
+
+Calls
+
+storage.saveToken(token)
+
+↓
+
+Redirects
+
+dashboard.html
+Then what happens?
+
+Now the browser has
+
+JWT
+
+stored.
+
+Whenever another request happens
+
+api.getVehicles()
+
+api.js automatically attaches
+
+Authorization:
+
+Bearer eyJhbG...
+
+Notice
+
+Your pages don't know about JWT.
+
+api.js handles it.
+
+Your second question
+
+You asked:
+
+What action must be done to show that a user is logged out to the backend?
+
+Excellent question.
+
+The answer depends on your architecture.
+
+Current Architecture (Stateless JWT)
+
+Suppose browser has
+
+JWT
+
+Logout
+
+↓
+
+Browser deletes JWT
+
+storage.removeToken();
+
+Now
+
+api.getVehicles()
+
+tries
+
+Without token
+
+↓
+
+Backend receives
+
+GET /vehicles
+
+No Authorization header.
+
+authenticate middleware
+
+↓
+
+Returns
+
+401 Unauthorized
+
+The backend now knows
+
+This request is no longer authenticated.
+
+Notice
+
+The backend wasn't "informed."
+
+It simply stopped receiving the JWT.
+
+That's enough.
+
+Do we need POST /logout?
+
+Technically
+
+No.
+
+If we simply do
+
+storage.removeToken();
+
+the user is effectively logged out.
+
+Then why did we create /logout?
+
+Because maybe later
+
+Logout should also
+
+Insert Log
+
+↓
+
+Delete Refresh Token
+
+↓
+
+Update Last Seen
+
+↓
+
+Notify Admin
+
+↓
+
+Audit Trail
+
+Today
+
+No.
+
+Tomorrow
+
+Yes.
+
+That's why professional APIs still expose
+
+POST /logout
+What should happen now in Julie Transporters?
+
+Current logout
+
+await api.logout();
+
+storage.removeToken();
+
+window.location = "/login.html";
+
+Backend
+
+200 OK
+
+Browser
+
+Deletes token
+
+Done.
+
+
+
+
+
+
+public/
+
+assets/
+
+css/
+
+js/
+
+api/
+    api.js
+
+storage/
+    storage.js
+
+auth/
+    login.js
+    logout.js
+    authGuard.js
+
+pages/
+
+admin/
+
+components/
+
+utils/

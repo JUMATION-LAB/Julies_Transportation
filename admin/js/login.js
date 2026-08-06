@@ -1,20 +1,21 @@
-import { showToast } from '../../js/utils/toast.js';
+// import {Toast}  from '../../public/js/utils/toast.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const submitBtn = document.getElementById('submitBtn');
-    const btnText = submitBtn.querySelector('.btn-text');
+    const btnText = document.getElementById('btnText');
 
     if (!loginForm) return;
 
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        console.log("Login file");
 
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value.trim();
+        const email = document.getElementById('email').value.trim() || 'false@email';
+        const password = document.getElementById('password').value.trim() || 'falsepassword';
 
         if (!email || !password) {
-            showToast('Please enter both email and password.', 'error');
+            Toast.error('Please enter both email and password.', 'error');
             return;
         }
 
@@ -23,20 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             btnText.textContent = 'Signing in...';
 
+            console.log( "Before api" );
             // Communicate with backend via your API helper
             const response = await API.post('/auth/login', { email, password });
+            console.log("Login.js res" , response)
 
             // Extract token safely based on standard JWT response structures
-            const token = response.data?.token || response.token;
+            const token = response.data?.accessToken || response.accessToken;
 
             if (!token) {
                 throw new Error('Authentication token missing from server response.');
             }
 
             // Save token securely using your Storage utility
-            Storage.setToken(token);
+            console.log("Before" , response.data?.accessToken)
+            storage.setToken(token);
+            console.log("After")
 
-            showToast('Login successful! Redirecting...', 'success');
+            Toast.success('Login successful! Redirecting...', 'success');
 
             // Redirect smoothly to dashboard
             setTimeout(() => {
@@ -46,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (err) {
             // Catch error thrown by your API helper and extract message
             const errorMsg = err.message || err.error || 'Invalid credentials. Please try again.';
-            showToast(errorMsg, 'error');
+            Toast.error(errorMsg, 'error');
 
             // Reset UI state
             submitBtn.disabled = false;

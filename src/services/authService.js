@@ -11,7 +11,7 @@ const login = async (email, password) => {
         .select('id, name, email, password_hash, is_active')
         .eq('email', email)
         .maybeSingle();
-// console.log("Admin data:", admin);
+console.log("Admin data:", admin);
     if (error) {
         throw error;
     }

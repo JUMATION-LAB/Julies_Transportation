@@ -1,9 +1,11 @@
 const { AppError } = require('../utils/AppError');
 
+console.log("Req headers");
 const validateLogin = (req, res, next) => {
-    const { email, password } = req.body.body;
-    console.log("Req body",req.body);
-    // console.log("Req headers",req);
+    const { body} = req.body;
+    const { email, password } = body;
+    console.log("Req body",req.body.body);
+    console.log("Req body",  email , password);
     const errors = [];
 
     if (typeof email !== 'string' || !email.trim()) {

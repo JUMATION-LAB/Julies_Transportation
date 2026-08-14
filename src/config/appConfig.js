@@ -1,32 +1,35 @@
 
 const config = {
 
-
     port: process.env.PORT || 3000,
 
 
     supabase: {
-
         url: process.env.SUPABASE_URL,
-
         // annonKey: process.env.SUPABASE_ANON_KEY,
-
         secretKey: process.env.SUPABASE_SECRET_KEY
-
     },
+
 
     jwt: {
         secret: process.env.JWT_SECRET,
         expiresIn: process.env.JWT_EXPIRES_IN || '15m',
         refreshSecret: process.env.JWT_REFRESH_SECRET,
         refreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '30d'
-
-    }
-    ,
+    },
+    
     pg: {
-        url: process.env.DATABASE_URL
+        url: process.env.DATABASE_URL,
+    },
 
-    } 
+    db: {
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        name: process.env.DB_NAME,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD
+    }
+
 
 }
 

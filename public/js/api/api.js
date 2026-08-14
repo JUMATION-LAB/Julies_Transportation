@@ -41,7 +41,9 @@ const API = (() => {
         },
 
         post(endpoint, body) {
-            console.log('This is the body.', body)
+            
+            console.log('This is the body.', body);
+
             return request(endpoint,'POST', {
                 //  ...( storage.getToken() && { 'Authorization': `Bearer ${ storage.getToken() }` }),
 

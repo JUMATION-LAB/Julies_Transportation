@@ -10,7 +10,7 @@ const generateAccessToken = (admin)=>{
     return jwt.sign(
         {
            id: admin.id,
-           role: admin.role,
+        //    role: admin.role,
            
         },
         config.jwt.secret,

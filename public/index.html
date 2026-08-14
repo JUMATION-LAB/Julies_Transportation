@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Julie Transporters — Your Safety Journey</title>
+<meta name="description" content="Julie Transporters — safe, reliable transport for weddings, parties, tours, airport pickups, and corporate travel." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./css/site.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="nav-brand__dot"></span>
+      <span class="nav-brand__text">Julie Transporters<small>Your Safety Journey</small></span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#journey">How it works</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#book">Contact</a>
+    </div>
+
+    <a href="#book" class="btn btn--amber nav-cta">Book a ride</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#services">Services</a>
+    <a href="#fleet">Fleet</a>
+    <a href="#journey">How it works</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#book">Contact</a>
+    <a href="#book" class="btn btn--amber">Book a ride</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Kampala · Est. 2014</p>
+      <h1>Every trip, a <em>safe</em> journey.</h1>
+      <p>Julie Transporters moves you and the people who matter to you — from wedding convoys to boardroom pickups — with vetted drivers and a fleet inspected every week.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn btn--amber">Book a ride</a>
+        <a href="tel:+256700000000" class="btn btn--outline-light">Call +256 700 000 000</a>
+      </div>
+
+      <div class="hero-road" aria-hidden="true">
+        <svg viewBox="0 0 520 40" xmlns="http://www.w3.org/2000/svg">
+          <line class="road-line" x1="0" y1="20" x2="520" y2="20" />
+          <line class="road-line road-line--active" x1="0" y1="20" x2="520" y2="20" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img src="https://picsum.photos/seed/jt-hero/900/700" alt="Julie Transporters vehicle on the road" />
+      <div class="hero-visual__badge">
+        <span class="dot"></span>
+        <div>
+          <strong>24 vehicles on the road</strong>
+          <span>Live fleet, inspected weekly</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="wrap trust-grid">
+      <div class="trust-item"><strong>12+</strong><span>Years on the road</span></div>
+      <div class="trust-item"><strong>8,400+</strong><span>Trips completed</span></div>
+      <div class="trust-item"><strong>24</strong><span>Vehicles in fleet</span></div>
+      <div class="trust-item"><strong>4.9 / 5</strong><span>Average rating</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SERVICES
+     — mirrors the `services` table: name + description
+     ============================================================ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>One fleet, every occasion.</h2>
+      <p>From a bride's convoy to a 6am airport run, each service is staffed and priced differently — pick yours below when you book.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-card__glyph">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.2 6.6H21l-5.4 4 2 6.6L12 15l-5.6 4.2 2-6.6L3 8.6h6.8z"/></svg>
+        </div>
+        <h3>Weddings</h3>
+        <p>Decorated convoy vehicles, a dedicated lead car, and drivers briefed on your full-day itinerary.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__glyph">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Parties &amp; events</h3>
+        <p>Group transport that keeps everyone together and gets them home safely at the end of the night.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__glyph">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3C9.5 6 9.5 18 12 21"/></svg>
+        </div>
+        <h3>Tours &amp; adventures</h3>
+        <p>4x4-capable vehicles for national parks, upcountry routes, and multi-day itineraries.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__glyph">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 16l7-2 5-9 2 1-3 8 7-1 2 2-8 3-3 5-2-1 1-5z"/></svg>
+        </div>
+        <h3>Airport pickups</h3>
+        <p>Flight-tracked pickups and drop-offs at Entebbe, day or night, with a name board waiting for you.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__glyph">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+        </div>
+        <h3>Corporate travel</h3>
+        <p>Monthly billing, executive vehicles, and priority scheduling for teams that travel often.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FLEET
+     — mirrors the `vehicles` table: name, type, passenger_capacity,
+       description, image_url, is_available
+     ============================================================ -->
+<section class="section section--alt" id="fleet">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The fleet</p>
+      <h2>Vehicles for every party size.</h2>
+      <p>Every vehicle is serviced on a fixed schedule and checked before it leaves the yard. Availability updates in real time once a booking is confirmed.</p>
+    </div>
+
+    <div class="fleet-grid">
+
+      <article class="fleet-card">
+        <div class="fleet-card__img">
+          <img src="https://picsum.photos/seed/jt-coaster/640/400" alt="Toyota Coaster minibus" />
+          <span class="fleet-pill fleet-pill--available">Available</span>
+        </div>
+        <div class="fleet-card__body">
+          <h3>Toyota Coaster</h3>
+          <div class="fleet-meta"><span>Minibus</span><span>29 seats</span></div>
+          <p>Best for wedding guests and large tour groups travelling together.</p>
+        </div>
+      </article>
+
+      <article class="fleet-card">
+        <div class="fleet-card__img">
+          <img src="https://picsum.photos/seed/jt-hiace/640/400" alt="Toyota Hiace van" />
+          <span class="fleet-pill fleet-pill--available">Available</span>
+        </div>
+        <div class="fleet-card__body">
+          <h3>Toyota Hiace</h3>
+          <div class="fleet-meta"><span>Van</span><span>14 seats</span></div>
+          <p>A practical mid-size option for corporate teams and small tour parties.</p>
+        </div>
+      </article>
+
+      <article class="fleet-card">
+        <div class="fleet-card__img">
+          <img src="https://picsum.photos/seed/jt-sclass/640/400" alt="Mercedes S-Class executive sedan" />
+          <span class="fleet-pill fleet-pill--available">Available</span>
+        </div>
+        <div class="fleet-card__body">
+          <h3>Mercedes S-Class</h3>
+          <div class="fleet-meta"><span>Executive sedan</span><span>3 seats</span></div>
+          <p>Airport transfers and executive pickups where first impressions matter.</p>
+        </div>
+      </article>
+
+      <article class="fleet-card">
+        <div class="fleet-card__img">
+          <img src="https://picsum.photos/seed/jt-landcruiser/640/400" alt="Land Cruiser V8 SUV" />
+          <span class="fleet-pill fleet-pill--unavailable">Booked until Aug 9</span>
+        </div>
+        <div class="fleet-card__body">
+          <h3>Land Cruiser V8</h3>
+          <div class="fleet-meta"><span>SUV</span><span>6 seats</span></div>
+          <p>Rugged comfort for upcountry tours and national park routes.</p>
+        </div>
+      </article>
+
+      <article class="fleet-card">
+        <div class="fleet-card__img">
+          <img src="https://picsum.photos/seed/jt-noah/640/400" alt="Toyota Noah family van" />
+          <span class="fleet-pill fleet-pill--available">Available</span>
+        </div>
+        <div class="fleet-card__body">
+          <h3>Toyota Noah</h3>
+          <div class="fleet-meta"><span>Family van</span><span>7 seats</span></div>
+          <p>A comfortable family-sized option for parties and small group travel.</p>
+        </div>
+      </article>
+
+      <article class="fleet-card">
+        <div class="fleet-card__img">
+          <img src="https://picsum.photos/seed/jt-prado/640/400" alt="Prado TX SUV" />
+          <span class="fleet-pill fleet-pill--available">Available</span>
+        </div>
+        <div class="fleet-card__body">
+          <h3>Prado TX</h3>
+          <div class="fleet-meta"><span>SUV</span><span>6 seats</span></div>
+          <p>Our most-booked vehicle for corporate travel and small wedding parties.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS
+     — genuinely sequential, so numbering is earned here
+     ============================================================ -->
+<section class="section section--dark" id="journey">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Your safety journey</p>
+      <h2>Four steps from request to arrival.</h2>
+      <p>The same process whether you're booking a single airport run or a full wedding convoy.</p>
+    </div>
+
+    <div class="journey-track">
+      <div class="journey-step">
+        <div class="journey-step__index">01</div>
+        <h3>Send a request</h3>
+        <p>Tell us the route, date, and passenger count using the form below.</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-step__index">02</div>
+        <h3>We confirm</h3>
+        <p>Our team matches an available vehicle and calls to confirm details within the hour.</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-step__index">03</div>
+        <h3>Driver checks in</h3>
+        <p>Your driver reaches out the evening before with their name, plate number, and ETA.</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-step__index">04</div>
+        <h3>Arrive safely</h3>
+        <p>On time, every time — that's the only outcome we consider a completed trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+     — mirrors the `gallery` table: image entries
+     ============================================================ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">On the road</p>
+      <h2>Recent trips.</h2>
+      <p>A look at the fleet in motion — weddings, tours, and everything between.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall"><img src="https://picsum.photos/seed/jt-g1/500/700" alt="Wedding convoy departing" /></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/jt-g2/500/350" alt="Guests boarding a coaster" /></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/jt-g3/500/350" alt="Tour vehicle on a dirt road" /></div>
+      <div class="gallery-item gallery-item--tall"><img src="https://picsum.photos/seed/jt-g4/500/700" alt="Executive sedan at Entebbe airport" /></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/jt-g5/500/350" alt="Corporate team boarding a van" /></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/jt-g6/500/350" alt="Driver loading luggage" /></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/jt-g7/500/350" alt="Fleet parked at the yard" /></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/jt-g8/500/350" alt="Sunset drive on a highway" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     — mirrors the `testimonials` table: name, quote, rating
+     ============================================================ -->
+<section class="section section--alt" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Reviews</p>
+      <h2>What our customers say.</h2>
+    </div>
+
+    <div class="testimonial-grid">
+      <article class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">The convoy arrived 20 minutes early and the driver knew our whole day's schedule better than some of our family did.</p>
+        <div class="testimonial-person">
+          <img src="https://picsum.photos/seed/jt-p1/80/80" alt="" />
+          <div><strong>Nakato Rebecca</strong><span>Wedding client, June 2026</span></div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">We put our whole regional sales team on a monthly contract with Julie Transporters. Billing is simple and drivers are always on time.</p>
+        <div class="testimonial-person">
+          <img src="https://picsum.photos/seed/jt-p2/80/80" alt="" />
+          <div><strong>David Okello</strong><span>Corporate client, logistics firm</span></div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="stars">★★★★☆</div>
+        <p class="quote">Landed at 1am and my driver was already at arrivals with a name board. Exactly what I needed after a long flight.</p>
+        <div class="testimonial-person">
+          <img src="https://picsum.photos/seed/jt-p3/80/80" alt="" />
+          <div><strong>Grace Namuli</strong><span>Airport transfer client</span></div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Three days upcountry in a Land Cruiser, no breakdowns, no delays. Booking again for our next tour.</p>
+        <div class="testimonial-person">
+          <img src="https://picsum.photos/seed/jt-p4/80/80" alt="" />
+          <div><strong>Peter Ssekandi</strong><span>Tours &amp; adventures client</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BOOKING FORM
+     — fields match validateBooking's allowedFields exactly
+     ============================================================ -->
+<section class="section section--dark" id="book">
+  <div class="wrap booking-shell">
+    <div class="booking-info">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Ready to book your ride?</h2>
+      <p>Fill in the details and our team will call to confirm within the hour — usually much sooner.</p>
+
+      <div class="contact-line">
+        <span class="contact-line__icon">☎</span>
+        <div><strong>+256 700 000 000</strong><span>Mon–Sun, 7am–10pm</span></div>
+      </div>
+      <div class="contact-line">
+        <span class="contact-line__icon">✉</span>
+        <div><strong>bookings@julietransporters.com</strong><span>We reply within a few hours</span></div>
+      </div>
+      <div class="contact-line">
+        <span class="contact-line__icon">◎</span>
+        <div><strong>Kampala, Uganda</strong><span>Serving Kampala &amp; upcountry routes</span></div>
+      </div>
+    </div>
+
+    <form class="booking-form" id="booking-form">
+      <div class="form-row form-row--split">
+        <div class="field">
+          <label for="customer_name">Full name</label>
+          <input type="text" id="customer_name" name="customer_name" placeholder="Matovu Juma" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="0751 176 056" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="optional">(optional)</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" />
+      </div>
+
+      <div class="form-row form-row--split">
+        <div class="field">
+          <label for="service_id">Service</label>
+          <select id="service_id" name="service_id" required>
+            <option value="">Select a service</option>
+            <option value="weddings">Weddings</option>
+            <option value="parties">Parties &amp; events</option>
+            <option value="tours">Tours &amp; adventures</option>
+            <option value="airport">Airport pickups</option>
+            <option value="corporate">Corporate travel</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="vehicle_id">Preferred vehicle <span class="optional">(optional)</span></label>
+          <select id="vehicle_id" name="vehicle_id">
+            <option value="">No preference</option>
+            <option value="coaster">Toyota Coaster — 29 seats</option>
+            <option value="hiace">Toyota Hiace — 14 seats</option>
+            <option value="sclass">Mercedes S-Class — 3 seats</option>
+            <option value="landcruiser">Land Cruiser V8 — 6 seats</option>
+            <option value="noah">Toyota Noah — 7 seats</option>
+            <option value="prado">Prado TX — 6 seats</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row form-row--split">
+        <div class="field">
+          <label for="pickup_location">Pickup location</label>
+          <input type="text" id="pickup_location" name="pickup_location" placeholder="Kampala" required />
+        </div>
+        <div class="field">
+          <label for="destination">Destination</label>
+          <input type="text" id="destination" name="destination" placeholder="Jinja" required />
+        </div>
+      </div>
+
+      <div class="form-row form-row--triple">
+        <div class="field">
+          <label for="travel_date">Travel date</label>
+          <input type="date" id="travel_date" name="travel_date" required />
+        </div>
+        <div class="field">
+          <label for="departure_time">Departure time <span class="optional">(optional)</span></label>
+          <input type="time" id="departure_time" name="departure_time" />
+        </div>
+        <div class="field">
+          <label for="passengers">Passengers</label>
+          <input type="number" id="passengers" name="passengers" min="1" placeholder="12" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="return_date">Return date <span class="optional">(optional)</span></label>
+        <input type="date" id="return_date" name="return_date" />
+      </div>
+
+      <div class="field">
+        <label for="message">Message <span class="optional">(optional)</span></label>
+        <textarea id="message" name="message" placeholder="Anything we should know about your trip?"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--amber form-submit">Request booking</button>
+      <p class="form-note">This form is static markup — wire its submit handler to <code>POST /api/bookings</code> when you connect it.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand">
+        <span class="nav-brand__dot"></span>
+        <span class="nav-brand__text">Julie Transporters<small>Your Safety Journey</small></span>
+      </div>
+      <p>Safe, reliable transport across Kampala and beyond — weddings, tours, airport runs, and corporate travel.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="WhatsApp">wa</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Weddings</a></li>
+        <li><a href="#services">Parties &amp; events</a></li>
+        <li><a href="#services">Tours &amp; adventures</a></li>
+        <li><a href="#services">Airport pickups</a></li>
+        <li><a href="#services">Corporate travel</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#fleet">Our fleet</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#book">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>+256 700 000 000</li>
+        <li>bookings@julietransporters.com</li>
+        <li>Kampala, Uganda</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 Julie Transporters. All rights reserved.</span>
+    <div class="footer-route">
+      <span></span><span></span><span></span>
+      <span style="margin-left:8px;">Your Safety Journey</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle — the only JS on this page, by design.
+  var toggle = document.getElementById('nav-toggle');
+  var mobile = document.getElementById('nav-mobile');
+  toggle.addEventListener('click', function () {
+    var isOpen = mobile.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.nav-mobile a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobile.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>

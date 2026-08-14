@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julie Transporters — Admin Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ===== CSS-only tab controllers (visually hidden, keyboard accessible) ===== -->
+  <input class="tab-toggle" type="radio" name="tabs" id="tab-dashboard" checked>
+  <input class="tab-toggle" type="radio" name="tabs" id="tab-bookings">
+  <input class="tab-toggle" type="radio" name="tabs" id="tab-vehicles">
+  <input class="tab-toggle" type="radio" name="tabs" id="tab-services">
+  <input class="tab-toggle" type="radio" name="tabs" id="tab-gallery">
+  <input class="tab-toggle" type="radio" name="tabs" id="tab-testimonials">
+  <input class="tab-toggle" type="radio" name="tabs" id="tab-settings">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">
+        <span class="dot"></span>
+        <span>Julie Transporters</span>
+      </div>
+      <div class="brand-tagline">Your Safety Journey — Admin</div>
+    </div>
+
+    <nav class="route-nav">
+      <label class="route-stop" for="tab-dashboard"><i class="fa-solid fa-gauge-high"></i><span class="label">Dashboard</span><span class="stop-code">01</span></label>
+      <label class="route-stop" for="tab-bookings"><i class="fa-solid fa-calendar-check"></i><span class="label">Bookings</span><span class="stop-code">02</span></label>
+      <label class="route-stop" for="tab-vehicles"><i class="fa-solid fa-van-shuttle"></i><span class="label">Vehicles</span><span class="stop-code">03</span></label>
+      <label class="route-stop" for="tab-services"><i class="fa-solid fa-briefcase"></i><span class="label">Services</span><span class="stop-code">04</span></label>
+      <label class="route-stop" for="tab-gallery"><i class="fa-solid fa-images"></i><span class="label">Gallery</span><span class="stop-code">05</span></label>
+      <label class="route-stop" for="tab-testimonials"><i class="fa-solid fa-quote-right"></i><span class="label">Testimonials</span><span class="stop-code">06</span></label>
+      <label class="route-stop" for="tab-settings"><i class="fa-solid fa-gear"></i><span class="label">Settings</span><span class="stop-code">07</span></label>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="admin-chip">
+        <div class="admin-avatar">JT</div>
+        <div>
+          <div class="name">Admin</div>
+          <div class="role">Julie Transporters</div>
+        </div>
+      </div>
+      <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main">
+
+    <!-- ============================================================ -->
+    <!-- 01 · DASHBOARD -->
+    <!-- ============================================================ -->
+    <section class="panel" id="panel-dashboard">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Route 01 / Overview</div>
+          <h1>Dashboard</h1>
+        </div>
+        <div class="today"><i class="fa-regular fa-calendar"></i> Friday, 14 Aug 2026</div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card amber">
+          <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="value">6</div>
+          <div class="label">Pending bookings</div>
+        </div>
+        <div class="stat-card green">
+          <div class="icon"><i class="fa-solid fa-check"></i></div>
+          <div class="value">14</div>
+          <div class="label">Confirmed this week</div>
+        </div>
+        <div class="stat-card blue">
+          <div class="icon"><i class="fa-solid fa-van-shuttle"></i></div>
+          <div class="value">9</div>
+          <div class="label">Active vehicles</div>
+        </div>
+        <div class="stat-card navy">
+          <div class="icon"><i class="fa-solid fa-quote-right"></i></div>
+          <div class="value">27</div>
+          <div class="label">Published testimonials</div>
+        </div>
+      </div>
+
+      <div class="dash-columns">
+        <div class="card">
+          <div class="panel-title-row">
+            <h3>Recent booking requests</h3>
+            <label class="link-btn" for="tab-bookings" style="cursor:pointer;">View all →</label>
+          </div>
+          <div class="mini-booking">
+            <div>
+              <span class="ref">JT-2026-0142</span>
+              <div class="who">Grace Nakato</div>
+              <div class="route">Entebbe Airport → Kampala</div>
+            </div>
+            <span class="badge pending">Pending</span>
+          </div>
+          <div class="mini-booking">
+            <div>
+              <span class="ref">JT-2026-0141</span>
+              <div class="who">Moses Okello — Wedding</div>
+              <div class="route">Garden City → Speke Resort</div>
+            </div>
+            <span class="badge confirmed">Confirmed</span>
+          </div>
+          <div class="mini-booking">
+            <div>
+              <span class="ref">JT-2026-0140</span>
+              <div class="who">Tembo Safaris — Corporate</div>
+              <div class="route">Kampala → Jinja (3 days)</div>
+            </div>
+            <span class="badge contacted">Contacted</span>
+          </div>
+          <div class="mini-booking">
+            <div>
+              <span class="ref">JT-2026-0139</span>
+              <div class="who">Sarah K. — Family Trip</div>
+              <div class="route">Kampala → Murchison Falls</div>
+            </div>
+            <span class="badge completed">Completed</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="panel-title-row"><h3>Quick actions</h3></div>
+          <div class="quick-actions">
+            <label for="tab-vehicles"><i class="fa-solid fa-circle-plus"></i> Add a vehicle</label>
+            <label for="tab-services"><i class="fa-solid fa-circle-plus"></i> Add a service</label>
+            <label for="tab-gallery"><i class="fa-solid fa-circle-plus"></i> Upload gallery photo</label>
+            <label for="tab-bookings"><i class="fa-solid fa-list-check"></i> Review pending bookings</label>
+            <label for="tab-settings"><i class="fa-solid fa-phone"></i> Update WhatsApp numbers</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 02 · BOOKINGS -->
+    <!-- ============================================================ -->
+    <section class="panel" id="panel-bookings">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Route 02 / Reservations</div>
+          <h1>Bookings</h1>
+        </div>
+        <div class="today"><i class="fa-solid fa-inbox"></i> 6 awaiting response</div>
+      </div>
+
+      <div class="chip-row">
+        <span class="chip active">All (23)</span>
+        <span class="chip">Pending (6)</span>
+        <span class="chip">Contacted (3)</span>
+        <span class="chip">Confirmed (9)</span>
+        <span class="chip">Completed (4)</span>
+        <span class="chip">Cancelled (1)</span>
+      </div>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Reference</th>
+                <th>Customer</th>
+                <th>Route</th>
+                <th>Travel date</th>
+                <th>Passengers</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ref">JT-2026-0142</td>
+                <td><div class="primary">Grace Nakato</div><div class="secondary">0700 123 456</div></td>
+                <td>Entebbe Airport → Kampala</td>
+                <td>18 Aug 2026</td>
+                <td>2</td>
+                <td>
+                  <select class="status-select">
+                    <option selected>Pending</option>
+                    <option>Contacted</option>
+                    <option>Confirmed</option>
+                    <option>Completed</option>
+                    <option>Cancelled</option>
+                  </select>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="icon-btn" title="View details"><i class="fa-regular fa-eye"></i></button>
+                    <button class="icon-btn" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="ref">JT-2026-0141</td>
+                <td><div class="primary">Moses Okello</div><div class="secondary">Wedding · 0771 987 654</div></td>
+                <td>Garden City → Speke Resort</td>
+                <td>22 Aug 2026</td>
+                <td>6</td>
+                <td>
+                  <select class="status-select">
+                    <option>Pending</option>
+                    <option>Contacted</option>
+                    <option selected>Confirmed</option>
+                    <option>Completed</option>
+                    <option>Cancelled</option>
+                  </select>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="icon-btn" title="View details"><i class="fa-regular fa-eye"></i></button>
+                    <button class="icon-btn" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="ref">JT-2026-0140</td>
+                <td><div class="primary">Tembo Safaris</div><div class="secondary">Corporate Travel</div></td>
+                <td>Kampala → Jinja</td>
+                <td>25–27 Aug 2026</td>
+                <td>12</td>
+                <td>
+                  <select class="status-select">
+                    <option>Pending</option>
+                    <option selected>Contacted</option>
+                    <option>Confirmed</option>
+                    <option>Completed</option>
+                    <option>Cancelled</option>
+                  </select>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="icon-btn" title="View details"><i class="fa-regular fa-eye"></i></button>
+                    <button class="icon-btn" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="ref">JT-2026-0139</td>
+                <td><div class="primary">Sarah K.</div><div class="secondary">Family Trip</div></td>
+                <td>Kampala → Murchison Falls</td>
+                <td>10 Aug 2026</td>
+                <td>5</td>
+                <td>
+                  <select class="status-select">
+                    <option>Pending</option>
+                    <option>Contacted</option>
+                    <option>Confirmed</option>
+                    <option selected>Completed</option>
+                    <option>Cancelled</option>
+                  </select>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="icon-btn" title="View details"><i class="fa-regular fa-eye"></i></button>
+                    <button class="icon-btn" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="hint" style="display:block;margin-top:10px;color:var(--text-faint);font-size:12px;">
+        Bookings are created by customers through the public site. This tab is for reviewing and updating their status only.
+      </p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 03 · VEHICLES -->
+    <!-- ============================================================ -->
+    <section class="panel" id="panel-vehicles">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Route 03 / Fleet</div>
+          <h1>Vehicles</h1>
+        </div>
+        <div class="today"><i class="fa-solid fa-van-shuttle"></i> 9 active in fleet</div>
+      </div>
+
+      <details class="add-panel">
+        <summary>Add a new vehicle</summary>
+        <div class="form-grid">
+          <div class="field">
+            <label for="v-name">Vehicle name</label>
+            <input id="v-name" type="text" placeholder="e.g. Toyota Coaster">
+          </div>
+          <div class="field">
+            <label for="v-type">Type</label>
+            <select id="v-type">
+              <option>Saloon Car</option>
+              <option>SUV</option>
+              <option>Van</option>
+              <option>Minibus (Coaster)</option>
+              <option>Bus</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="v-capacity">Passenger capacity</label>
+            <input id="v-capacity" type="number" min="1" placeholder="e.g. 14">
+          </div>
+          <div class="field">
+            <label for="v-price">Price per day (UGX)</label>
+            <input id="v-price" type="number" min="0" placeholder="e.g. 350000">
+          </div>
+          <div class="field full">
+            <label for="v-image">Image URL</label>
+            <input id="v-image" type="url" placeholder="https://...">
+            <span class="hint">Paste a hosted image link — direct uploads come in a later version.</span>
+          </div>
+          <div class="field full">
+            <label for="v-desc">Description</label>
+            <textarea id="v-desc" placeholder="Short description shown on the public fleet page"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary">Save vehicle</button>
+            <button type="button" class="btn btn-ghost">Cancel</button>
+          </div>
+        </div>
+      </details>
+
+      <div class="card-grid">
+        <div class="entity-card">
+          <div class="thumb"><i class="fa-solid fa-van-shuttle"></i><span class="active-flag badge confirmed">Active</span></div>
+          <div class="body">
+            <h4>Toyota Coaster</h4>
+            <div class="meta">Minibus · Capacity <span>29</span></div>
+            <div class="card-foot">
+              <span class="price-tag">UGX 450,000/day</span>
+              <div class="row-actions">
+                <button class="icon-btn"><i class="fa-regular fa-pen-to-square"></i></button>
+                <button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="entity-card">
+          <div class="thumb"><i class="fa-solid fa-car"></i><span class="active-flag badge confirmed">Active</span></div>
+          <div class="body">
+            <h4>Toyota Prado</h4>
+            <div class="meta">SUV · Capacity <span>5</span></div>
+            <div class="card-foot">
+              <span class="price-tag">UGX 280,000/day</span>
+              <div class="row-actions">
+                <button class="icon-btn"><i class="fa-regular fa-pen-to-square"></i></button>
+                <button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="entity-card">
+          <div class="thumb"><i class="fa-solid fa-shuttle-van"></i><span class="active-flag badge pending">Maintenance</span></div>
+          <div class="body">
+            <h4>Nissan Caravan</h4>
+            <div class="meta">Van · Capacity <span>14</span></div>
+            <div class="card-foot">
+              <span class="price-tag">UGX 220,000/day</span>
+              <div class="row-actions">
+                <button class="icon-btn"><i class="fa-regular fa-pen-to-square"></i></button>
+                <button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 04 · SERVICES -->
+    <!-- ============================================================ -->
+    <section class="panel" id="panel-services">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Route 04 / Offerings</div>
+          <h1>Services</h1>
+        </div>
+        <div class="today"><i class="fa-solid fa-briefcase"></i> 7 categories</div>
+      </div>
+
+      <details class="add-panel">
+        <summary>Add a new service</summary>
+        <div class="form-grid cols-3">
+          <div class="field">
+            <label for="s-name">Service name</label>
+            <input id="s-name" type="text" placeholder="e.g. Wedding Transport">
+          </div>
+          <div class="field">
+            <label for="s-icon">Icon</label>
+            <input id="s-icon" type="text" placeholder="e.g. fa-solid fa-ring (Font Awesome class)">
+          </div>
+          <div class="field">
+            <label for="s-order">Display order</label>
+            <input id="s-order" type="number" min="1" placeholder="e.g. 1">
+          </div>
+          <div class="field full">
+            <label for="s-desc">Description</label>
+            <textarea id="s-desc" placeholder="Shown on the public services section"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary">Save service</button>
+            <button type="button" class="btn btn-ghost">Cancel</button>
+          </div>
+        </div>
+      </details>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Order</th><th>Service</th><th>Description</th><th>Status</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ref">01</td>
+                <td><div class="primary"><i class="fa-solid fa-ring" style="color:var(--amber-600);margin-right:6px;"></i>Weddings</div></td>
+                <td class="secondary">Decorated bridal cars and guest transport</td>
+                <td><span class="badge confirmed">Active</span></td>
+                <td><div class="row-actions"><button class="icon-btn"><i class="fa-regular fa-pen-to-square"></i></button><button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button></div></td>
+              </tr>
+              <tr>
+                <td class="ref">02</td>
+                <td><div class="primary"><i class="fa-solid fa-plane-arrival" style="color:var(--amber-600);margin-right:6px;"></i>Airport Pickups</div></td>
+                <td class="secondary">Reliable Entebbe airport transfers, any hour</td>
+                <td><span class="badge confirmed">Active</span></td>
+                <td><div class="row-actions"><button class="icon-btn"><i class="fa-regular fa-pen-to-square"></i></button><button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button></div></td>
+              </tr>
+              <tr>
+                <td class="ref">03</td>
+                <td><div class="primary"><i class="fa-solid fa-mountain-sun" style="color:var(--amber-600);margin-right:6px;"></i>Tours &amp; Adventures</div></td>
+                <td class="secondary">Multi-day safari and national park transport</td>
+                <td><span class="badge confirmed">Active</span></td>
+                <td><div class="row-actions"><button class="icon-btn"><i class="fa-regular fa-pen-to-square"></i></button><button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button></div></td>
+              </tr>
+              <tr>
+                <td class="ref">04</td>
+                <td><div class="primary"><i class="fa-solid fa-building" style="color:var(--amber-600);margin-right:6px;"></i>Corporate Travel</div></td>
+                <td class="secondary">Staff shuttles and executive transport</td>
+                <td><span class="badge confirmed">Active</span></td>
+                <td><div class="row-actions"><button class="icon-btn"><i class="fa-regular fa-pen-to-square"></i></button><button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 05 · GALLERY -->
+    <!-- ============================================================ -->
+    <section class="panel" id="panel-gallery">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Route 05 / Media</div>
+          <h1>Gallery</h1>
+        </div>
+        <div class="today"><i class="fa-solid fa-images"></i> 18 photos published</div>
+      </div>
+
+      <details class="add-panel">
+        <summary>Add a new photo</summary>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="g-url">Image URL</label>
+            <input id="g-url" type="url" placeholder="https://...">
+          </div>
+          <div class="field">
+            <label for="g-caption">Caption</label>
+            <input id="g-caption" type="text" placeholder="e.g. Bridal car, Nakato wedding">
+          </div>
+          <div class="field">
+            <label for="g-category">Category</label>
+            <select id="g-category">
+              <option>Weddings</option>
+              <option>Parties</option>
+              <option>Tours &amp; Adventures</option>
+              <option>Corporate Travel</option>
+              <option>Family Trips</option>
+              <option>Events</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary">Publish photo</button>
+            <button type="button" class="btn btn-ghost">Cancel</button>
+          </div>
+        </div>
+      </details>
+
+      <div class="card-grid">
+        <div class="entity-card gallery-card">
+          <div class="thumb"><i class="fa-solid fa-image"></i></div>
+          <div class="body">
+            <span class="meta category">Weddings</span>
+            <h4 style="margin-top:8px;">Bridal car — Nakato wedding</h4>
+            <div class="card-foot">
+              <span class="secondary" style="font-size:11.5px;color:var(--text-faint);">Added 3 Aug 2026</span>
+              <div class="row-actions"><button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="entity-card gallery-card">
+          <div class="thumb"><i class="fa-solid fa-image"></i></div>
+          <div class="body">
+            <span class="meta category">Tours &amp; Adventures</span>
+            <h4 style="margin-top:8px;">Murchison Falls convoy</h4>
+            <div class="card-foot">
+              <span class="secondary" style="font-size:11.5px;color:var(--text-faint);">Added 29 Jul 2026</span>
+              <div class="row-actions"><button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="entity-card gallery-card">
+          <div class="thumb"><i class="fa-solid fa-image"></i></div>
+          <div class="body">
+            <span class="meta category">Corporate Travel</span>
+            <h4 style="margin-top:8px;">Fleet at Tembo Safaris offsite</h4>
+            <div class="card-foot">
+              <span class="secondary" style="font-size:11.5px;color:var(--text-faint);">Added 20 Jul 2026</span>
+              <div class="row-actions"><button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 06 · TESTIMONIALS -->
+    <!-- ============================================================ -->
+    <section class="panel" id="panel-testimonials">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Route 06 / Feedback</div>
+          <h1>Testimonials</h1>
+        </div>
+        <div class="today"><i class="fa-solid fa-quote-right"></i> 27 published · 2 pending</div>
+      </div>
+
+      <details class="add-panel">
+        <summary>Add a testimonial</summary>
+        <div class="form-grid">
+          <div class="field">
+            <label for="t-name">Customer name</label>
+            <input id="t-name" type="text" placeholder="e.g. Diana M.">
+          </div>
+          <div class="field">
+            <label for="t-service">Related service</label>
+            <select id="t-service">
+              <option>Weddings</option>
+              <option>Parties</option>
+              <option>Tours &amp; Adventures</option>
+              <option>Airport Pickups</option>
+              <option>Corporate Travel</option>
+              <option>Family Trips</option>
+              <option>Events</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="t-rating">Rating</label>
+            <select id="t-rating">
+              <option>5 stars</option>
+              <option>4 stars</option>
+              <option>3 stars</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="t-status">Status</label>
+            <select id="t-status">
+              <option>Published</option>
+              <option>Pending review</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="t-quote">Testimonial text</label>
+            <textarea id="t-quote" placeholder="What the customer said"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary">Save testimonial</button>
+            <button type="button" class="btn btn-ghost">Cancel</button>
+          </div>
+        </div>
+      </details>
+
+      <div class="testimonial-list">
+        <div class="testimonial-card">
+          <div class="avatar">DM</div>
+          <div style="flex:1;">
+            <div class="t-head">
+              <div>
+                <div class="t-name">Diana M.</div>
+                <div class="t-service">Airport Pickup, Entebbe</div>
+                <div class="stars">★★★★★</div>
+              </div>
+              <span class="badge confirmed">Published</span>
+            </div>
+            <p class="quote">Driver was waiting on time even though our flight was delayed. Very professional and the car was spotless.</p>
+          </div>
+          <div class="t-actions">
+            <button class="icon-btn"><i class="fa-regular fa-pen-to-square"></i></button>
+            <button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="avatar">RK</div>
+          <div style="flex:1;">
+            <div class="t-head">
+              <div>
+                <div class="t-name">Robert K.</div>
+                <div class="t-service">Corporate Travel</div>
+                <div class="stars">★★★★★</div>
+              </div>
+              <span class="badge pending">Pending review</span>
+            </div>
+            <p class="quote">Booked a coaster for our staff retreat to Jinja — smooth booking process and a very safe driver.</p>
+          </div>
+          <div class="t-actions">
+            <button class="icon-btn"><i class="fa-solid fa-check" style="color:var(--green-600);"></i></button>
+            <button class="icon-btn danger"><i class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 07 · SETTINGS -->
+    <!-- ============================================================ -->
+    <section class="panel" id="panel-settings">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Route 07 / Configuration</div>
+          <h1>Settings</h1>
+        </div>
+      </div>
+
+      <div class="settings-grid">
+        <div class="card settings-card">
+          <h3>Business information</h3>
+          <div class="settings-form">
+            <div class="field">
+              <label for="set-name">Business name</label>
+              <input id="set-name" type="text" value="Julie Transporters">
+            </div>
+            <div class="field">
+              <label for="set-slogan">Slogan</label>
+              <input id="set-slogan" type="text" value="Your Safety Journey">
+            </div>
+            <div class="field">
+              <label for="set-address">Physical address</label>
+              <input id="set-address" type="text" placeholder="e.g. Kampala, Uganda">
+            </div>
+            <div class="field">
+              <label for="set-about">About text</label>
+              <textarea id="set-about" placeholder="Shown on the public About section"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card settings-card">
+          <h3>Contact &amp; WhatsApp</h3>
+          <div class="settings-form">
+            <div class="field-row">
+              <div class="field">
+                <label for="set-wa1">WhatsApp number 1</label>
+                <input id="set-wa1" type="tel" value="0751176056">
+              </div>
+              <div class="field">
+                <label for="set-wa2">WhatsApp number 2</label>
+                <input id="set-wa2" type="tel" value="0760067306">
+              </div>
+            </div>
+            <div class="field">
+              <label for="set-email">Support email</label>
+              <input id="set-email" type="email" placeholder="e.g. info@julietransporters.com">
+            </div>
+            <div class="field">
+              <label for="set-wa-message">Default WhatsApp booking message</label>
+              <textarea id="set-wa-message" placeholder="Pre-filled message customers send when they tap 'Book on WhatsApp'"></textarea>
+              <span class="hint">Used until bookings are fully database-driven end-to-end.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card settings-card">
+          <h3>Map &amp; location</h3>
+          <div class="settings-form">
+            <div class="field">
+              <label for="set-maps-embed">Google Maps embed link</label>
+              <input id="set-maps-embed" type="url" placeholder="https://maps.google.com/...">
+            </div>
+            <div class="field">
+              <label for="set-lat">Latitude</label>
+              <input id="set-lat" type="text" placeholder="e.g. 0.3476">
+            </div>
+            <div class="field">
+              <label for="set-lng">Longitude</label>
+              <input id="set-lng" type="text" placeholder="e.g. 32.5825">
+            </div>
+          </div>
+        </div>
+
+        <div class="card settings-card">
+          <h3>Admin account</h3>
+          <div class="settings-form">
+            <div class="field">
+              <label for="set-admin-name">Admin name</label>
+              <input id="set-admin-name" type="text" placeholder="Full name">
+            </div>
+            <div class="field">
+              <label for="set-admin-email">Admin email</label>
+              <input id="set-admin-email" type="email" placeholder="Login email">
+            </div>
+            <div class="field">
+              <label for="set-admin-pass">New password</label>
+              <input id="set-admin-pass" type="password" placeholder="Leave blank to keep current password">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions" style="margin-top:20px;">
+        <button type="button" class="btn btn-primary">Save settings</button>
+        <button type="button" class="btn btn-ghost">Discard changes</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>

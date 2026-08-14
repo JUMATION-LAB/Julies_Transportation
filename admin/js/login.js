@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         console.log("Login file");
 
-        const email = document.getElementById('email').value.trim() || 'false@email';
-        const password = document.getElementById('password').value.trim() || 'falsepassword';
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
 
         if (!email || !password) {
             Toast.error('Please enter both email and password.', 'error');

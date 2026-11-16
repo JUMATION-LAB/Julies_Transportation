@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Julie Transporters — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">JT</div>
+      <div class="brand-text">
+        <span class="brand-name">Julie Transporters</span>
+        <span class="brand-tag">Your Safety Journey</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <span class="nav-label">Operations</span>
+      <button class="nav-item is-active" data-target="overview">
+        <span class="nav-ico">◆</span> Overview
+      </button>
+      <button class="nav-item" data-target="bookings">
+        <span class="nav-ico">◆</span> Bookings
+      </button>
+      <button class="nav-item" data-target="vehicles">
+        <span class="nav-ico">◆</span> Vehicles
+      </button>
+
+      <span class="nav-label">Content</span>
+      <button class="nav-item" data-target="services">
+        <span class="nav-ico">◆</span> Services
+      </button>
+      <button class="nav-item" data-target="gallery">
+        <span class="nav-ico">◆</span> Gallery
+      </button>
+      <button class="nav-item" data-target="testimonials">
+        <span class="nav-ico">◆</span> Testimonials
+      </button>
+
+      <span class="nav-label">Account</span>
+      <button class="nav-item" data-target="settings">
+        <span class="nav-ico">◆</span> Settings
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="odometer">
+        <span class="odometer-label">Fleet uptime</span>
+        <span class="odometer-value">98.4%</span>
+      </div>
+      <button class="logout-btn">Log out</button>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+
+      <div class="search">
+        <span class="search-ico">⌕</span>
+        <input type="text" placeholder="Search bookings, vehicles, customers…" />
+      </div>
+
+      <div class="topbar-right">
+        <button class="icon-btn" aria-label="Notifications">
+          🔔
+          <span class="badge-dot"></span>
+        </button>
+        <div class="divider-v"></div>
+        <div class="profile">
+          <div class="avatar">JN</div>
+          <div class="profile-text">
+            <span class="profile-name">Julie N.</span>
+            <span class="profile-role">Admin</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- ============ OVERVIEW ============ -->
+      <section class="panel is-active" id="overview">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Mile 0 — Dashboard</span>
+            <h1>Route overview</h1>
+          </div>
+          <button class="btn btn-primary">+ New booking</button>
+        </div>
+
+        <div class="route-line"></div>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-marker">01</span>
+            <span class="stat-label">Bookings this week</span>
+            <span class="stat-value">42</span>
+            <span class="stat-delta up">▲ 12% vs last week</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-marker">02</span>
+            <span class="stat-label">Vehicles on the road</span>
+            <span class="stat-value">9<span class="stat-unit">/12</span></span>
+            <span class="stat-delta">3 in maintenance</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-marker">03</span>
+            <span class="stat-label">Revenue (UGX)</span>
+            <span class="stat-value">6.2M</span>
+            <span class="stat-delta up">▲ 8% vs last week</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-marker">04</span>
+            <span class="stat-label">Pending requests</span>
+            <span class="stat-value">7</span>
+            <span class="stat-delta down">Needs review</span>
+          </div>
+        </div>
+
+        <div class="route-line"></div>
+
+        <div class="split-grid">
+          <div class="card table-card">
+            <div class="card-head">
+              <h2>Upcoming trips</h2>
+              <a class="link" href="#">View all bookings →</a>
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Trip type</th>
+                  <th>Vehicle</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Grace Nakato</td>
+                  <td>Wedding</td>
+                  <td>Mercedes V-Class</td>
+                  <td>Aug 09, 2026</td>
+                  <td><span class="pill pill-confirmed">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td>Brian Okello</td>
+                  <td>Airport pickup</td>
+                  <td>Toyota Prado</td>
+                  <td>Aug 06, 2026</td>
+                  <td><span class="pill pill-pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>Alpha Corp Ltd</td>
+                  <td>Corporate travel</td>
+                  <td>Coaster Bus</td>
+                  <td>Aug 12, 2026</td>
+                  <td><span class="pill pill-confirmed">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td>Sarah Nabirye</td>
+                  <td>Tour &amp; Adventure</td>
+                  <td>Land Cruiser</td>
+                  <td>Aug 15, 2026</td>
+                  <td><span class="pill pill-cancelled">Cancelled</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h2>Fleet signal</h2>
+            </div>
+            <ul class="signal-list">
+              <li>
+                <span class="signal-dot dot-green"></span>
+                <div>
+                  <strong>Mercedes V-Class</strong>
+                  <span>En route · Wedding pickup</span>
+                </div>
+              </li>
+              <li>
+                <span class="signal-dot dot-yellow"></span>
+                <div>
+                  <strong>Toyota Prado</strong>
+                  <span>Idle · Airport bay 2</span>
+                </div>
+              </li>
+              <li>
+                <span class="signal-dot dot-red"></span>
+                <div>
+                  <strong>Coaster Bus 02</strong>
+                  <span>Maintenance · Brake check</span>
+                </div>
+              </li>
+              <li>
+                <span class="signal-dot dot-green"></span>
+                <div>
+                  <strong>Land Cruiser</strong>
+                  <span>En route · Airport pickup</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BOOKINGS ============ -->
+      <section class="panel" id="bookings">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Journeys</span>
+            <h1>Bookings</h1>
+          </div>
+          <button class="btn btn-primary">+ New booking</button>
+        </div>
+
+        <div class="tab-row">
+          <button class="tab is-active">All <span class="tab-count">58</span></button>
+          <button class="tab">Pending <span class="tab-count">7</span></button>
+          <button class="tab">Confirmed <span class="tab-count">41</span></button>
+          <button class="tab">Completed <span class="tab-count">8</span></button>
+          <button class="tab">Cancelled <span class="tab-count">2</span></button>
+        </div>
+
+        <div class="card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Customer</th>
+                <th>Trip type</th>
+                <th>Vehicle</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">JT-1042</td>
+                <td>Grace Nakato</td>
+                <td>Wedding</td>
+                <td>Mercedes V-Class</td>
+                <td>Aug 09, 2026</td>
+                <td class="mono">450,000</td>
+                <td><span class="pill pill-confirmed">Confirmed</span></td>
+                <td><button class="btn-icon">⋯</button></td>
+              </tr>
+              <tr>
+                <td class="mono">JT-1043</td>
+                <td>Brian Okello</td>
+                <td>Airport pickup</td>
+                <td>Toyota Prado</td>
+                <td>Aug 06, 2026</td>
+                <td class="mono">120,000</td>
+                <td><span class="pill pill-pending">Pending</span></td>
+                <td><button class="btn-icon">⋯</button></td>
+              </tr>
+              <tr>
+                <td class="mono">JT-1044</td>
+                <td>Alpha Corp Ltd</td>
+                <td>Corporate travel</td>
+                <td>Coaster Bus</td>
+                <td>Aug 12, 2026</td>
+                <td class="mono">980,000</td>
+                <td><span class="pill pill-confirmed">Confirmed</span></td>
+                <td><button class="btn-icon">⋯</button></td>
+              </tr>
+              <tr>
+                <td class="mono">JT-1045</td>
+                <td>Sarah Nabirye</td>
+                <td>Tour &amp; Adventure</td>
+                <td>Land Cruiser</td>
+                <td>Aug 15, 2026</td>
+                <td class="mono">300,000</td>
+                <td><span class="pill pill-cancelled">Cancelled</span></td>
+                <td><button class="btn-icon">⋯</button></td>
+              </tr>
+              <tr>
+                <td class="mono">JT-1046</td>
+                <td>Peter Kato</td>
+                <td>Party</td>
+                <td>Mercedes V-Class</td>
+                <td>Aug 18, 2026</td>
+                <td class="mono">220,000</td>
+                <td><span class="pill pill-pending">Pending</span></td>
+                <td><button class="btn-icon">⋯</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ VEHICLES ============ -->
+      <section class="panel" id="vehicles">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Fleet</span>
+            <h1>Vehicles</h1>
+          </div>
+          <button class="btn btn-primary">+ Add vehicle</button>
+        </div>
+
+        <div class="vehicle-grid">
+          <div class="vehicle-card">
+            <div class="vehicle-media">🚐</div>
+            <div class="vehicle-body">
+              <div class="vehicle-title-row">
+                <h3>Mercedes V-Class</h3>
+                <span class="pill pill-confirmed">Active</span>
+              </div>
+              <span class="vehicle-plate">UBA 402K</span>
+              <div class="vehicle-meta">
+                <span>7 seats</span>
+                <span>Weddings · Corporate</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-media">🚙</div>
+            <div class="vehicle-body">
+              <div class="vehicle-title-row">
+                <h3>Toyota Prado</h3>
+                <span class="pill pill-confirmed">Active</span>
+              </div>
+              <span class="vehicle-plate">UBB 118T</span>
+              <div class="vehicle-meta">
+                <span>5 seats</span>
+                <span>Airport · Tours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-media">🚌</div>
+            <div class="vehicle-body">
+              <div class="vehicle-title-row">
+                <h3>Coaster Bus 02</h3>
+                <span class="pill pill-pending">Maintenance</span>
+              </div>
+              <span class="vehicle-plate">UBC 771M</span>
+              <div class="vehicle-meta">
+                <span>29 seats</span>
+                <span>Corporate · Tours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-media">🚙</div>
+            <div class="vehicle-body">
+              <div class="vehicle-title-row">
+                <h3>Land Cruiser</h3>
+                <span class="pill pill-confirmed">Active</span>
+              </div>
+              <span class="vehicle-plate">UBD 903L</span>
+              <div class="vehicle-meta">
+                <span>6 seats</span>
+                <span>Tours · Airport</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICES ============ -->
+      <section class="panel" id="services">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Offerings</span>
+            <h1>Services</h1>
+          </div>
+          <button class="btn btn-primary">+ Add service</button>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <span class="service-marker">01</span>
+            <h3>Weddings</h3>
+            <p>Decorated bridal cars with a dedicated chauffeur and route escort.</p>
+            <span class="link">Edit service →</span>
+          </div>
+          <div class="service-card">
+            <span class="service-marker">02</span>
+            <h3>Parties</h3>
+            <p>Group transport for birthdays, send-offs, and private events.</p>
+            <span class="link">Edit service →</span>
+          </div>
+          <div class="service-card">
+            <span class="service-marker">03</span>
+            <h3>Tours &amp; Adventures</h3>
+            <p>Multi-day itineraries with 4x4 vehicles for upcountry travel.</p>
+            <span class="link">Edit service →</span>
+          </div>
+          <div class="service-card">
+            <span class="service-marker">04</span>
+            <h3>Airport pickups</h3>
+            <p>Flight-tracked pickups and drop-offs, day or night.</p>
+            <span class="link">Edit service →</span>
+          </div>
+          <div class="service-card">
+            <span class="service-marker">05</span>
+            <h3>Corporate travel</h3>
+            <p>Scheduled staff transport and executive chauffeur service.</p>
+            <span class="link">Edit service →</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GALLERY ============ -->
+      <section class="panel" id="gallery">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Media</span>
+            <h1>Gallery</h1>
+          </div>
+          <button class="btn btn-primary">+ Upload image</button>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item"><span>🖼</span></div>
+          <div class="gallery-item"><span>🖼</span></div>
+          <div class="gallery-item"><span>🖼</span></div>
+          <div class="gallery-item"><span>🖼</span></div>
+          <div class="gallery-item"><span>🖼</span></div>
+          <div class="gallery-item gallery-add">
+            <span>+</span>
+            <p>Add photo</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TESTIMONIALS ============ -->
+      <section class="panel" id="testimonials">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Feedback</span>
+            <h1>Testimonials</h1>
+          </div>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p>"Our wedding car arrived early, spotless, and the driver was so professional. Made the day feel safe and calm."</p>
+            <div class="testimonial-foot">
+              <div>
+                <strong>Grace Nakato</strong>
+                <span>Wedding client</span>
+              </div>
+              <span class="pill pill-confirmed">Approved</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Booked a Coaster for a staff retreat. On time both ways, and the driver knew the route better than our GPS."</p>
+            <div class="testimonial-foot">
+              <div>
+                <strong>Alpha Corp Ltd</strong>
+                <span>Corporate client</span>
+              </div>
+              <span class="pill pill-confirmed">Approved</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Late night airport pickup, driver was already waiting with a name board. Felt safe the whole ride home."</p>
+            <div class="testimonial-foot">
+              <div>
+                <strong>Brian Okello</strong>
+                <span>Airport client</span>
+              </div>
+              <span class="pill pill-pending">Pending review</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SETTINGS ============ -->
+      <section class="panel" id="settings">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">Account</span>
+            <h1>Settings</h1>
+          </div>
+        </div>
+
+        <div class="card settings-card">
+          <div class="settings-row">
+            <div>
+              <strong>Business name</strong>
+              <span>Julie Transporters</span>
+            </div>
+            <button class="btn btn-ghost">Edit</button>
+          </div>
+          <div class="settings-row">
+            <div>
+              <strong>Slogan</strong>
+              <span>Your Safety Journey</span>
+            </div>
+            <button class="btn btn-ghost">Edit</button>
+          </div>
+          <div class="settings-row">
+            <div>
+              <strong>Admin email</strong>
+              <span>admin@julietransporters.com</span>
+            </div>
+            <button class="btn btn-ghost">Edit</button>
+          </div>
+          <div class="settings-row">
+            <div>
+              <strong>Password</strong>
+              <span>Last changed 34 days ago</span>
+            </div>
+            <button class="btn btn-ghost">Change</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

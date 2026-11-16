@@ -13,7 +13,7 @@ const createAdmin = async ()=>{
     const password = 'changed';
 
     const passwordHash = await bcrypt.hash( password , 12);
-
+    
     const { data , error } = await supabase.from('admins')
                 .insert({
                     name,
@@ -23,14 +23,15 @@ const createAdmin = async ()=>{
                 .select('id , name , email ,  is_active, created_at')
                 .single();
 
-
+                
                 if(error){
                     throw new AppError('Retrieval Error', error);
                 console.log("Admin Errror ", error);
                 }
 
                 console.log("Admin ", data);
-
+                console.log("Password" )
+                
 };
 
 

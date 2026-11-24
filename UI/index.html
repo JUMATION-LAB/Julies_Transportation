@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#193e35"><title>Julie Transporters | Your Safety Journey</title>
+<meta name="description" content="Plan private transport for weddings, adventures, events and corporate journeys from Kampala with Julie Transporters.">
+<link rel="stylesheet" href="jt/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+<script defer src="jt/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#booking">Skip to booking</a>
+<header id="home" class="hero"><img class="scenery" id="hero-photo" src="jt/assets/journey.webp" alt="" fetchpriority="high">
+<nav class="nav wrap" aria-label="Main navigation">
+<a class="brand" href="#home"><b class="monogram">JT</b><span>Julie <strong>Transporters</strong></span></a>
+<button class="menu" aria-label="Navigation menu" aria-expanded="false" aria-controls="links">Menu ☰</button>
+<div id="links"><a href="#home">Home</a><a href="#fleet">Our Fleet</a><a href="#services">Services</a><a href="#destinations">Destinations</a><a href="#gallery">Gallery</a><a href="#about">About Us</a><a href="#contact">Contact</a></div>
+<a class="nav-book" href="#booking">Book a Ride ↗</a></nav>
+<div class="hero-copy wrap"><span class="overline light">Julie Transporters · Kampala, Uganda</span><h1>Your Journey.<br>Our Priority.</h1><p>From unforgettable adventures to life's most important celebrations, travel safely and comfortably with Julie Transporters.</p><a class="hero-link" href="#fleet">Explore Our Fleet <span>↗</span></a></div></header>
+<main>
+<form id="booking" class="booking wrap"><fieldset><legend>Plan your journey</legend><div id="service-tabs" class="tabs"></div></fieldset>
+<div class="fields">
+<label>Pickup location<input name="pickup" placeholder="Where from?" required maxlength="160"></label>
+<label>Destination<input name="destination" placeholder="Where to?" required maxlength="160"></label>
+<label>Travel date<input name="date" type="date" required></label>
+<label>Passengers<input name="passengers" type="number" placeholder="Group size" min="1" step="1" required></label>
+<label id="preferred" hidden>Preferred vehicle<select name="vehicle"><option value="">Any vehicle</option></select></label>
+<button class="primary" type="submit">Request Booking ↗</button></div></form>
+<section class="section wrap" id="services"><header class="section-heading"><span class="overline">Our services</span><h2>Transport for every occasion.</h2><p>Choose the kind of journey you have in mind.</p></header><div id="service-cards" class="cards"></div></section>
+<section id="fleet" class="tint"><div class="section wrap"><header class="section-heading"><span class="overline">Our fleet</span><h2>Find your ride.</h2></header><div id="vehicle-cards" aria-live="polite">Checking fleet availability…</div></div></section>
+<section class="section wrap" id="destinations"><header class="section-heading"><span class="overline">Destinations &amp; experiences</span><h2>Explore Uganda by road.</h2><p>A little inspiration for your private itinerary.</p></header><div class="pair" id="places"></div></section>
+<section class="tint" id="about"><div class="section wrap"><header class="section-heading"><span class="overline">About Julie Transporters</span><h2>Your Safety Journey</h2><p>Based in Kampala, we help groups plan transport around their people, occasion and route.</p></header><div class="values"><article><h3>Safety &amp; comfort</h3><p>Discuss seating, luggage and pickup details before your group travels.</p></article><article><h3>Professional service</h3><p>Coordinate times and meeting points directly with our team.</p></article><article><h3>Flexible arrangements</h3><p>Send a WhatsApp inquiry for a single transfer or a customized group itinerary.</p></article></div></div></section>
+<section class="section wrap" id="gallery"><header class="section-heading"><span class="overline">Gallery</span><h2>A glimpse of the journey.</h2><p id="gallery-note"></p></header><div class="gallery" id="photos"></div></section>
+<section class="tint"><div class="section wrap"><header class="section-heading"><span class="overline">Testimonials</span><h2>Traveler stories.</h2></header><div id="reviews" aria-live="polite">Loading traveler stories…</div></div></section>
+</main>
+<footer id="contact"><div class="wrap"><span class="overline light">Contact us</span><h2>Where are we taking you?</h2><a class="footer-book" href="#booking">Plan your ride ↗</a><div class="footer-grid"><div><a href="#home" class="brand"><b class="monogram">JT</b>Julie Transporters</a><p>Your Safety Journey</p><a id="map" href="https://www.google.com/maps/search/?api=1&amp;query=Julie+Transporters+Kampala+Uganda"><i class="fa-solid fa-location-dot"></i> Kampala, Uganda ↗</a></div><div><h3>Explore</h3><a href="#services">Our services</a><a href="#fleet">Our fleet</a><a href="#destinations">Destinations</a></div><div><h3>Call our team</h3><a href="tel:+256751176056"><i class="fa-solid fa-phone"></i> +256 751 176 056</a><a href="tel:+256760067306">+256 760 067 306</a></div><div><h3>WhatsApp</h3><a href="https://wa.me/256751176056">+256 751 176 056 ↗</a><a href="https://wa.me/256760067306">+256 760 067 306 ↗</a></div></div><small>© <span id="year"></span> Julie Transporters</small></div></footer>
+<a class="chat" href="https://wa.me/256751176056" aria-label="Contact Julie Transporters on WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>Chat</span></a>
+<dialog id="viewer"><button type="button" aria-label="Close photo">Close ×</button><img alt=""><p></p></dialog>
+</body></html>

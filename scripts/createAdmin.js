@@ -22,7 +22,6 @@ const createAdmin = async ()=>{
                 })
                 .select('id , name , email ,  is_active, created_at')
                 .single();
-
                 
                 if(error){
                     throw new AppError('Retrieval Error', error);

@@ -16,6 +16,7 @@ const settingsRoutes = require('./routes/settingsRoutes');
 const testimonialRoutes = require('./routes/testimonialRoutes');
 const authRoutes = require('./routes/authRoutes');
 const galleryRoutes = require('./routes/galleryRoutes');
+const uploadRoutes = require('./routes/uploadRoutes')
 
 const {errorHandler} = require('./middleware/errorHandler');
 const {notFoundHandler} = require('./middleware/notFoundHandler')
@@ -41,6 +42,7 @@ app.use('/api', testimonialRoutes);
 app.use('/api', galleryRoutes);
 app.use('/api', authRoutes);
 app.use('/test' , testRoutes);
+app.use('/api', uploadRoutes);
 
 
 
